@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>影视搜索 beta</title>
+<link rel="stylesheet" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/bootstrap.css"/>
+<link rel="stylesheet" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/bower_components/Font-Awesome/css/font-awesome.css"/>
+<link rel="stylesheet" href="http://flatlogic.github.io/awesome-bootstrap-checkbox/demo/build.css"/>
+
+<style> 
+body {
+	background-color: #f1f1f1;
+	font-family: Helvetica,Arial,Verdana;
+
+}
+
+.search-box,.close-icon,.search-wrapper {
+	position: relative;
+	padding: 10px;
+}
+.search-wrapper {
+	width: 500px;
+	margin: auto;
+	margin-top: 50px;
+}
+.search-box {
+	width: 80%;
+	border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 15px;
+}
+.search-box:focus {
+	box-shadow: 0 0 15px 5px #b0e0ee;
+	border: 2px solid #bebede;
+}
+.close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+	content: "X";
+	display: block;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-color: #FA9595;
+	z-index:1;
+	right: 35px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: normal;
+	font-size: 12px;
+	box-shadow: 0 0 2px #E50F0F;
+	cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+	display: none;
+}
+.span1{
+    font-size:16px;
+    font-weight:bold;
+} 
+.bottommargin {
+    margin-bottom: 5px;
+    width: 80%;
+}
+.align01{
+    text-align: center;
+    width: 80%;
+}
+</style>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="transform.js"></script>
+
+<script type="text/javascript">
+var KeyWord = location.search.replace("?","");
+var url_checked = ''
+
+function movie_search(){
+    var search_kw = document.querySelector('#search').value;
+    var c_rdv = $("input[type='radio']:checked").val();
+    var x = "1111"
+    switch (c_rdv){
+        case "101":
+            x="https://search.douban.com/movie/subject_search?search_text="+search_kw;
+            break;        
+        case "102":
+            x="https://www.baidu.com/s?wd="+search_kw;
+            break;
+        case "103":
+            x="https://magi.com/search?q="+search_kw;
+            break;
+        case "01":
+            x="https://www.nfmovies.com/search.php?searchword="+search_kw;
+            break;
+        case "02":
+            x="https://www.22tu.cc/vodsearch/"+search_kw+'-------------/';
+            break;
+        case "03":
+            x="https://www.baidu.com/s?wd="+search_kw+'%20site%3Addrk.me';
+            break;
+        case "04":
+            x="https://www.novipnoad.com/?s="+search_kw;
+            break;
+        case "05":
+            search_kw=search_kw.s2t();
+            x="https://bowan.su/search/?wd="+search_kw;
+            break;
+        case "06":
+            x="https://www.bde4.com/search/"+search_kw;
+            break;
+        case "07":
+            x="https://www.zxzj.me/vodsearch/-------------.html?wd="+search_kw;
+            break;
+        case "08":
+            x="https://ddyy.site/vodsearch/"+search_kw+'-------------/';
+            break;
+
+
+    
+    }
+
+window.open(x, '_blank')
+}
+
+
+</script>
+</head>
+
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="search-wrapper">
+	<form  onkeydown="if(event.keyCode==13){return false;}">
+	<input id='search' type="text" name="focus" required class="search-box" placeholder="输入关键词..." onkeydown="if(event.keyCode==13){movie_search();}" autocomplete="off"/>
+		<button class="close-icon" type="reset"></button>
+
+	     
+    <p></p>
+    <div>
+        <fieldset>
+            <legend class="bottommargin">
+               <span class="span1">&nbsp;&nbsp;选择搜索网站 </span>
+            </legend>
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_101" value="101" checked>
+                <label for="site_101">豆瓣</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_102" value="102">
+                <label for="site_102">百度</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_103" value="103">
+                <label for="site_103">Magi</label>
+            </div>
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_01" value="01" >
+                <label for="site_01">奈菲影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_02" value="02">
+                <label for="site_02">迅播影院</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_03" value="03">
+                <label for="site_03">低端影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_04" value="04">
+                <label for="site_04">NO视频</label>
+            </div>
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_05" value="05" >
+                <label for="site_05">播王</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_06" value="06">
+                <label for="site_06">哔嘀影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_07" value="07">
+                <label for="site_07">在线之家</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_08" value="08">
+                <label for="site_08">点点影院</label>
+            </div>
+        </fieldset>
+        <p>&nbsp;</p>
+        <legend class="bottommargin">
+        </legend>
+
+        <div class="align01">
+        <button class="btn btn-default" type="button" onclick="movie_search()">开始搜索</button> 
+        </div>
+	</div>
+	</form>        
+</div>
+
+
+<script>
+document.querySelector('#search').value=KeyWord;
+</script>
+
+</body>
+</html>
