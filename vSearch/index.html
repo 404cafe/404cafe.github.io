@@ -99,29 +99,43 @@ function movie_search(){
         case "103":
             x="https://magi.com/search?q="+search_kw;
             break;
-        case "01":
+
+        case "901":
+            x="https://search.bilibili.com/all?keyword="+search_kw;
+            break;
+        case "902":
+            x="https://v.qq.com/x/search/?q="+search_kw;
+            break;
+        case "903":
+            x="https://so.youku.com/search_video/q_"+search_kw;
+            break;
+        case "904":
+            x="https://so.iqiyi.com/so/q_"+search_kw;
+            break;
+
+        case "201":
             x="https://www.nfmovies.com/search.php?searchword="+search_kw;
             break;
-        case "02":
+        case "202":
             x="https://www.22tu.cc/vodsearch/"+search_kw+'-------------/';
             break;
-        case "03":
+        case "203":
             x="https://www.baidu.com/s?wd="+search_kw+'%20site%3Addrk.me';
             break;
-        case "04":
+        case "204":
             x="https://www.novipnoad.com/?s="+search_kw;
             break;
-        case "05":
+        case "205":
             search_kw=search_kw.s2t();
             x="https://bowan.su/search/?wd="+search_kw;
             break;
-        case "06":
+        case "206":
             x="https://www.bde4.com/search/"+search_kw;
             break;
-        case "07":
+        case "207":
             x="https://www.zxzj.me/vodsearch/-------------.html?wd="+search_kw;
             break;
-        case "08":
+        case "208":
             x="https://ddyy.site/vodsearch/"+search_kw+'-------------/';
             break;
 
@@ -153,6 +167,7 @@ window.open(x, '_blank')
             <legend class="bottommargin">
                <span class="span1">&nbsp;&nbsp;选择搜索网站 </span>
             </legend>
+
             <div class="checkbox checkbox-success">
                 <input name="radio" type="radio" id="site_101" value="101" checked>
                 <label for="site_101">豆瓣</label>
@@ -163,31 +178,49 @@ window.open(x, '_blank')
                 <input name="radio" type="radio" id="site_103" value="103">
                 <label for="site_103">Magi</label>
             </div>
+
             <div class="checkbox checkbox-success">
-                <input name="radio" type="radio" id="site_01" value="01" >
-                <label for="site_01">奈菲影视</label>
+                <input name="radio" type="radio" id="site_901" value="901" >
+                <label for="site_901">B站</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp; 
+                <input name="radio" type="radio" id="site_902" value="902">
+                <label for="site_902">腾讯视频</label>
                 &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_02" value="02">
-                <label for="site_02">迅播影院</label>
+                <input name="radio" type="radio" id="site_903" value="903">
+                <label for="site_903">优酷视频</label>
                 &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_03" value="03">
-                <label for="site_03">低端影视</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_04" value="04">
-                <label for="site_04">NO视频</label>
+                <input name="radio" type="radio" id="site_904" value="904">
+                <label for="site_904">爱奇艺</label>
+                
+
             </div>
+
             <div class="checkbox checkbox-success">
-                <input name="radio" type="radio" id="site_05" value="05" >
-                <label for="site_05">播王</label>
+                <input name="radio" type="radio" id="site_201" value="201" >
+                <label for="site_201">奈菲影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_202" value="202">
+                <label for="site_202">迅播影院</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_203" value="203">
+                <label for="site_203">低端影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_204" value="204">
+                <label for="site_204">NO视频</label>
+            </div>
+
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_205" value="205" >
+                <label for="site_205">播王</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_06" value="06">
-                <label for="site_06">哔嘀影视</label>
+                <input name="radio" type="radio" id="site_206" value="206">
+                <label for="site_206">哔嘀影视</label>
                 &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_07" value="07">
-                <label for="site_07">在线之家</label>
+                <input name="radio" type="radio" id="site_207" value="207">
+                <label for="site_207">在线之家</label>
                 &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_08" value="08">
-                <label for="site_08">点点影院</label>
+                <input name="radio" type="radio" id="site_208" value="208">
+                <label for="site_208">点点影院</label>
             </div>
         </fieldset>
         <p>&nbsp;</p>
