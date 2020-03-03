@@ -82,7 +82,7 @@ body {
 <script src="transform.js"></script>
 
 <script type="text/javascript">
-var KeyWord = location.search.replace("?","");
+var KeyWord = decodeURIComponent(location.search.replace("?",""));
 var url_checked = ''
 
 function movie_search(){
