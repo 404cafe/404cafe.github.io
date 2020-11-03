@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/demo/bootstrap.css"/>
 <link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/bower_components/Font-Awesome/css/font-awesome.css"/>
 <link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/demo/build.css"/>
+<meta name="referrer" content="never">
 
 <style> 
 body {
@@ -117,7 +118,7 @@ function movie_search(){
             x="https://www.nfmovies.com/search.php?searchword="+search_kw;
             break;
         case "202":
-            x="https://www.22tu.cc/vodsearch/"+search_kw+'-------------/';
+            x="https://www.22tu.com/vodsearch/"+search_kw+'-------------/';
             break;
         case "203":
             x="https://www.baidu.com/s?wd="+search_kw+'%20site%3Addrk.me';
@@ -155,7 +156,7 @@ window.open(x, '_blank')
 <p>&nbsp;</p>
 
 <div class="search-wrapper">
-	<form  onkeydown="if(event.keyCode==13){return false;}">
+	<form  rel="noreferrer" onkeydown="if(event.keyCode==13){return false;}">
 	<input id='search' type="text" name="focus" required class="search-box" placeholder="输入关键词..." onkeydown="if(event.keyCode==13){movie_search();}" autocomplete="off"/>
 		<button class="close-icon" type="reset"></button>
 
