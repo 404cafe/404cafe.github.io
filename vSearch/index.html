@@ -80,7 +80,6 @@ body {
 </style>
 
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-<script src="transform.js"></script>
 
 <script type="text/javascript">
 var KeyWord = decodeURIComponent(location.search.replace("?",""));
@@ -115,7 +114,7 @@ function movie_search(){
             break;
 
         case "201":
-            x="https://www.nfmovies.com/search.php?searchword="+search_kw;
+            x="https://www.cupfox.com/search?key="+search_kw;
             break;
         case "202":
             x="https://www.22tu.com/vodsearch/"+search_kw+'-------------/';
@@ -124,19 +123,19 @@ function movie_search(){
             x="https://www.baidu.com/s?wd="+search_kw+'%20site%3Addrk.me';
             break;
         case "204":
-            x="https://www.novipnoad.com/?s="+search_kw;
+            x="https://cokemv.cn/vodsearch/-------------.html?wd="+search_kw;
             break;
         case "205":
-            x="http://bowang.tv/search.html?wd="+search_kw;
+            x="https://www.mp4pa.com/search.php?searchword="+search_kw;
             break;
         case "206":
-            x="https://www.bde4.com/search/"+search_kw;
+            x="https://www.mp4er.com/search/"+search_kw;
             break;
         case "207":
-            x="https://www.zxzj.me/vodsearch/-------------.html?wd="+search_kw;
+            x="https://www.nfmovies.com/search.php?searchword="+search_kw;
             break;
         case "208":
-            x="https://ddyy.site/vodsearch/"+search_kw+'-------------/';
+            x="https://www.22tu.com/vodsearch/"+search_kw+'-------------/';
             break;
 
 
@@ -167,18 +166,38 @@ window.open(x, '_blank')
             <legend class="bottommargin">
                <span class="span1">&nbsp;&nbsp;选择搜索网站 </span>
             </legend>
-
+          
+            
             <div class="checkbox checkbox-success">
-                <input name="radio" type="radio" id="site_101" value="101" checked>
-                <label for="site_101">豆瓣</label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_102" value="102">
-                <label for="site_102">百度</label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_103" value="103">
-                <label for="site_103">Magi</label>
+                <input name="radio" type="radio" id="site_201" value="201" checked>
+                <label for="site_201">茶杯狐</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_202" value="202">
+                <label for="site_202">1090影视</label>
+                &nbsp;
+                <input name="radio" type="radio" id="site_203" value="203">
+                <label for="site_203">低端影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_204" value="204">
+                <label for="site_204">COKEMV</label>
             </div>
 
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_205" value="205" >
+                <label for="site_205">Mp4Pa</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_206" value="206">
+                <label for="site_206">哔嘀影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_207" value="207">
+                <label for="site_207">奈菲影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_208" value="208">
+                <label for="site_208">迅播影院</label>
+            </div>
+            <div>
+            &nbsp;
+            </div>
             <div class="checkbox checkbox-success">
                 <input name="radio" type="radio" id="site_901" value="901" >
                 <label for="site_901">B站</label>
@@ -191,39 +210,22 @@ window.open(x, '_blank')
                 &nbsp;&nbsp;
                 <input name="radio" type="radio" id="site_904" value="904">
                 <label for="site_904">爱奇艺</label>
-                
-
             </div>
-
+            
             <div class="checkbox checkbox-success">
-                <input name="radio" type="radio" id="site_201" value="201" >
-                <label for="site_201">奈菲影视</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_202" value="202">
-                <label for="site_202">迅播影院</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_203" value="203">
-                <label for="site_203">低端影视</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_204" value="204">
-                <label for="site_204">NO视频</label>
-            </div>
-
-            <div class="checkbox checkbox-success">
-                <input name="radio" type="radio" id="site_205" value="205" >
-                <label for="site_205">播王</label>
+                <input name="radio" type="radio" id="site_101" value="101">
+                <label for="site_101">豆瓣</label>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_206" value="206">
-                <label for="site_206">哔嘀影视</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_207" value="207">
-                <label for="site_207">在线之家</label>
-                &nbsp;&nbsp;
-                <input name="radio" type="radio" id="site_208" value="208">
-                <label for="site_208">点点影院</label>
+                <input name="radio" type="radio" id="site_102" value="102">
+                <label for="site_102">百度</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_103" value="103">
+                <label for="site_103">Magi</label>
             </div>
+           
+
         </fieldset>
-        <p>&nbsp;</p>
+        <p></p>
         <legend class="bottommargin">
         </legend>
 
