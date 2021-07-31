@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>影视搜索</title>
+<link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/demo/bootstrap.css"/>
+<link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/bower_components/Font-Awesome/css/font-awesome.css"/>
+<link rel="stylesheet" href="https://flatlogic.github.io/awesome-bootstrap-checkbox/demo/build.css"/>
+<meta name="referrer" content="never">
+
+<style> 
+body {
+	background-color: #f1f1f1;
+	font-family: Helvetica,Arial,Verdana;
+
+}
+
+.search-box,.close-icon,.search-wrapper {
+	position: relative;
+	padding: 10px;
+}
+.search-wrapper {
+	width: 500px;
+	margin: auto;
+	margin-top: 50px;
+}
+.search-box {
+	width: 80%;
+	border: 1px solid #ccc;
+  outline: 0;
+  border-radius: 15px;
+}
+.search-box:focus {
+	box-shadow: 0 0 15px 5px #b0e0ee;
+	border: 2px solid #bebede;
+}
+.close-icon {
+	border:1px solid transparent;
+	background-color: transparent;
+	display: inline-block;
+	vertical-align: middle;
+  outline: 0;
+  cursor: pointer;
+}
+.close-icon:after {
+	content: "X";
+	display: block;
+	width: 15px;
+	height: 15px;
+	position: absolute;
+	background-color: #FA9595;
+	z-index:1;
+	right: 35px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	padding: 2px;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: normal;
+	font-size: 12px;
+	box-shadow: 0 0 2px #E50F0F;
+	cursor: pointer;
+}
+.search-box:not(:valid) ~ .close-icon {
+	display: none;
+}
+.span1{
+    font-size:16px;
+    font-weight:bold;
+} 
+.bottommargin {
+    margin-bottom: 5px;
+    width: 80%;
+}
+.align01{
+    text-align: center;
+    width: 80%;
+}
+</style>
+
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+var KeyWord = decodeURIComponent(location.search.replace("?",""));
+var url_checked = ''
+
+function movie_search(){
+    var search_kw = document.querySelector('#search').value;
+    var c_rdv = $("input[type='radio']:checked").val();
+    var x = "1111"
+    switch (c_rdv){
+        case "101":
+            x="https://search.douban.com/movie/subject_search?search_text="+search_kw;
+            break;        
+        case "102":
+            x="https://www.baidu.com/s?wd="+search_kw;
+            break;
+        case "103":
+            x="https://magi.com/search?q="+search_kw;
+            break;
+
+        case "901":
+            x="https://search.bilibili.com/all?keyword="+search_kw;
+            break;
+        case "902":
+            x="https://v.qq.com/x/search/?q="+search_kw;
+            break;
+        case "903":
+            x="https://so.youku.com/search_video/q_"+search_kw;
+            break;
+        case "904":
+            x="https://so.iqiyi.com/so/q_"+search_kw;
+            break;
+
+        case "201":
+            x="https://www.cupfox.com/search?key="+search_kw;
+            break;
+        case "202":
+            x="http://1090ys2.com/search.html?wd="+search_kw;
+            break;
+        case "203":
+            x="https://www.baidu.com/s?wd="+search_kw+'%20site%3Addrk.me';
+            break;
+        case "204":
+            x="https://cokemv.cn/vodsearch/-------------.html?wd="+search_kw;
+            break;
+        case "205":
+            x="https://www.mp4pa.com/search.php?searchword="+search_kw;
+            break;
+        case "206":
+            x="https://www.mp4er.com/search/"+search_kw;
+            break;
+        case "207":
+            x="https://www.nfmovies.com/search.php?searchword="+search_kw;
+            break;
+        case "208":
+            x="https://www.22tu.com/vodsearch/"+search_kw+'-------------/';
+            break;
+
+
+    
+    }
+
+window.open(x, '_blank')
+}
+
+
+</script>
+
+</head>
+
+
+<body>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<div class="search-wrapper">
+	<form  rel="noreferrer" onkeydown="if(event.keyCode==13){return false;}">
+	<input id='search' type="text" name="focus" required class="search-box" placeholder="输入关键词..." onkeydown="if(event.keyCode==13){movie_search();}" autocomplete="off"/>
+		<button class="close-icon" type="reset"></button>
+
+	     
+    <p></p>
+    <div>
+        <fieldset>
+            <legend class="bottommargin">
+               <span class="span1">&nbsp;&nbsp;选择搜索网站 </span>
+            </legend>
+          
+            
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_201" value="201" checked>
+                <label for="site_201">茶杯狐</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_202" value="202">
+                <label for="site_202">1090影视</label>
+                &nbsp;
+                <input name="radio" type="radio" id="site_203" value="203">
+                <label for="site_203">低端影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_204" value="204">
+                <label for="site_204">COKEMV</label>
+            </div>
+
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_205" value="205" >
+                <label for="site_205">Mp4Pa</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_206" value="206">
+                <label for="site_206">哔嘀影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_207" value="207">
+                <label for="site_207">奈菲影视</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_208" value="208">
+                <label for="site_208">迅播影院</label>
+            </div>
+            <div>
+            &nbsp;
+            </div>
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_901" value="901" >
+                <label for="site_901">B站</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&thinsp;&thinsp; 
+                <input name="radio" type="radio" id="site_902" value="902">
+                <label for="site_902">腾讯视频</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_903" value="903">
+                <label for="site_903">优酷视频</label>
+                &nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_904" value="904">
+                <label for="site_904">爱奇艺</label>
+            </div>
+            
+            <div class="checkbox checkbox-success">
+                <input name="radio" type="radio" id="site_101" value="101">
+                <label for="site_101">豆瓣</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_102" value="102">
+                <label for="site_102">百度</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input name="radio" type="radio" id="site_103" value="103">
+                <label for="site_103">Magi</label>
+            </div>
+           
+
+        </fieldset>
+        <p></p>
+        <legend class="bottommargin">
+        </legend>
+
+        <div class="align01">
+        <button class="btn btn-default" type="button" onclick="movie_search()">开始搜索</button> 
+        </div>
+	</div>
+	</form>        
+</div>
+
+
+<script>
+document.querySelector('#search').value=KeyWord;
+</script>
+
+<a href="http://www.reliablecounter.com" target="_blank"><img src="http://www.reliablecounter.com/count.php?page=404cafe.github.io/vSearch/test.html&digit=style/plain/1/&reloads=0" alt="reliablecounter.com" title="reliablecounter.com" border="0"></a><br /><a href="http://relia" target="_blank" style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">reliablecounter.com</a>
+</body>
+</html>
